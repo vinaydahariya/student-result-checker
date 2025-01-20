@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Student Result Viewer</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="font-sans bg-gray-100 text-gray-900">
+
+<nav class="bg-indigo-600 p-4">
+    <div class="max-w-7xl mx-auto flex items-center justify-between">
+        <!-- Logo -->
+        <div class="text-white text-2xl font-semibold">
+            Student Result Viewer
+        </div>
+
+        <!-- Navbar Links -->
+        <div class="hidden md:flex space-x-6">
+            <a th:href="@{'/'}" class="text-white hover:bg-indigo-700 px-4 py-2 rounded-lg transition duration-300">Home</a>
+            <a th:href="@{'/view-result'}" class="text-white hover:bg-indigo-700 px-4 py-2 rounded-lg transition duration-300">View Result</a>
+            <a th:href="@{'/admin/add-result'}" class="text-white hover:bg-indigo-700 px-4 py-2 rounded-lg transition duration-300">Add Result</a>
+            <a th:href="@{'/help'}" class="text-white hover:bg-indigo-700 px-4 py-2 rounded-lg transition duration-300">Help</a>
+        </div>
+
+        <!-- Mobile Menu Button -->
+        <div class="md:hidden flex items-center">
+            <button id="menu-toggle" class="text-white focus:outline-none">
+                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+                </svg>
+            </button>
+        </div>
+    </div>
+
+    <!-- Mobile Dropdown Menu -->
+    <div id="mobile-menu" class="md:hidden hidden bg-indigo-700 p-4 space-y-4">
+        <a href="#home" class="block text-white hover:bg-indigo-800 px-4 py-2 rounded-lg">Home</a>
+        <a href="#view-result" class="block text-white hover:bg-indigo-800 px-4 py-2 rounded-lg">View Result</a>
+        <a href="#add-result" class="block text-white hover:bg-indigo-800 px-4 py-2 rounded-lg">Add Result</a>
+        <a href="#help" class="block text-white hover:bg-indigo-800 px-4 py-2 rounded-lg">Help</a>
+    </div>
+</nav>
+
+<!-- Hero Section -->
+<section class="bg-indigo-600 text-white py-16 px-4 text-center">
+    <h1 class="text-4xl font-semibold mb-4">Welcome to the Student Result Viewer</h1>
+    <p class="text-xl mb-6">Effortlessly view and manage student results with an intuitive interface</p>
+    <a th:href="@{'/'}" class="bg-indigo-500 px-6 py-3 rounded-full text-lg font-medium hover:bg-indigo-700 transition duration-300">Get Started</a>
+</section>
+
+<!-- Feature Section -->
+<section class="py-16 px-6 text-center">
+    <h2 class="text-3xl font-semibold mb-8">Features</h2>
+    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
+        <div class="bg-white shadow-lg rounded-lg p-6">
+            <h3 class="text-xl font-semibold mb-4">Easy Result Viewing</h3>
+            <p>Quickly check student results with just a few clicks in a clean, responsive interface.</p>
+        </div>
+        <div class="bg-white shadow-lg rounded-lg p-6">
+            <h3 class="text-xl font-semibold mb-4">Secure Login</h3>
+            <p>Access results with a secure login system ensuring the privacy of students' data.</p>
+        </div>
+        <div class="bg-white shadow-lg rounded-lg p-6">
+            <h3 class="text-xl font-semibold mb-4">Real-Time Updates</h3>
+            <p>Results are updated in real time, ensuring that you always have the latest information.</p>
+        </div>
+    </div>
+</section>
+
+<!-- Action Section -->
+<section id="action" class="bg-indigo-100 py-16 px-6 text-center">
+    <h2 class="text-3xl font-semibold mb-4">Start Viewing Results Now</h2>
+    <p class="text-lg mb-6">Sign up today and get immediate access to student result viewing!</p>
+    <a th:href="@{'/view-result'}" class="bg-indigo-500 px-6 py-3 rounded-full text-lg font-medium text-white hover:bg-indigo-700 transition duration-300">View</a>
+</section>
+
+<!-- Testimonial Section -->
+<section class="py-16 px-6 bg-gray-200 text-center">
+    <h2 class="text-3xl font-semibold mb-8">What Our Users Say</h2>
+    <div class="flex flex-col sm:flex-row justify-center gap-8">
+        <div class="bg-white p-6 rounded-lg shadow-lg w-80">
+            <p class="text-lg mb-4">"This platform has made it so easy to track and manage student results. Highly recommended!"</p>
+            <p class="font-semibold">John Doe</p>
+            <p class="text-gray-600">Teacher</p>
+        </div>
+        <div class="bg-white p-6 rounded-lg shadow-lg w-80">
+            <p class="text-lg mb-4">"The real-time updates feature is amazing! I can now stay up-to-date with the latest results."</p>
+            <p class="font-semibold">Jane Smith</p>
+            <p class="text-gray-600">Parent</p>
+        </div>
+    </div>
+</section>
+
+</body>
+</html>

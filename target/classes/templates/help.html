@@ -1,0 +1,102 @@
+<!doctype html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Contact Us</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body>
+
+<nav class="bg-indigo-600 p-4">
+    <div class="max-w-7xl mx-auto flex items-center justify-between">
+        <!-- Logo -->
+        <div class="text-white text-2xl font-semibold">
+            Student Result Viewer
+        </div>
+
+        <!-- Navbar Links -->
+        <div class="hidden md:flex space-x-6">
+            <a th:href="@{'/'}" class="text-white hover:bg-indigo-700 px-4 py-2 rounded-lg transition duration-300">Home</a>
+            <a th:href="@{'/view-result'}" class="text-white hover:bg-indigo-700 px-4 py-2 rounded-lg transition duration-300">View Result</a>
+            <a th:href="@{'/admin/add-result'}" class="text-white hover:bg-indigo-700 px-4 py-2 rounded-lg transition duration-300">Add Result</a>
+            <a th:href="@{'/help'}" class="text-white hover:bg-indigo-700 px-4 py-2 rounded-lg transition duration-300">Help</a>
+        </div>
+
+        <!-- Mobile Menu Button -->
+        <div class="md:hidden flex items-center">
+            <button id="menu-toggle" class="text-white focus:outline-none">
+                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+                </svg>
+            </button>
+        </div>
+    </div>
+
+    <!-- Mobile Dropdown Menu -->
+    <div id="mobile-menu" class="md:hidden hidden bg-indigo-700 p-4 space-y-4">
+        <a href="#home" class="block text-white hover:bg-indigo-800 px-4 py-2 rounded-lg">Home</a>
+        <a href="#view-result" class="block text-white hover:bg-indigo-800 px-4 py-2 rounded-lg">View Result</a>
+        <a href="#add-result" class="block text-white hover:bg-indigo-800 px-4 py-2 rounded-lg">Add Result</a>
+        <a href="#help" class="block text-white hover:bg-indigo-800 px-4 py-2 rounded-lg">Help</a>
+    </div>
+</nav>
+<!-- Help Section -->
+<div class="max-w-7xl mx-auto bg-white p-6 mt-10 rounded-lg shadow-md">
+    <h1 class="text-2xl font-bold text-gray-700 mb-6">Help & Support</h1>
+
+    <!-- FAQ Section -->
+    <div class="mb-8">
+        <h2 class="text-xl font-semibold text-gray-800 mb-4">Frequently Asked Questions (FAQs)</h2>
+        <div class="space-y-4">
+            <div>
+                <h3 class="text-lg font-medium text-indigo-600">How can I view my results?</h3>
+                <p class="text-gray-700">To view your results, click on the "View Result" link in the navigation bar and enter your roll number or other required details.</p>
+            </div>
+            <div>
+                <h3 class="text-lg font-medium text-indigo-600">How do I update or add results?</h3>
+                <p class="text-gray-700">Administrators can add or update results by clicking on the "Add Result" link in the navigation bar and filling out the required details.</p>
+            </div>
+            <div>
+                <h3 class="text-lg font-medium text-indigo-600">Who do I contact for technical support?</h3>
+                <p class="text-gray-700">For technical issues, please fill out the contact form below or email us at <a href="mailto:support@studentresults.com" class="text-indigo-600 hover:underline">support@studentresults.com</a>.</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Contact Form -->
+    <div class="mb-8">
+        <h2 class="text-xl font-semibold text-gray-800 mb-4">Contact Us</h2>
+        <form action="#" method="POST" class="space-y-4">
+            <div>
+                <label for="name" class="block text-sm font-medium text-gray-700">Your Name</label>
+                <input type="text" id="name" name="name" class="mt-1 block w-full border-gray-300 rounded-lg shadow-sm focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm" required>
+            </div>
+            <div>
+                <label for="email" class="block text-sm font-medium text-gray-700">Your Email</label>
+                <input type="email" id="email" name="email" class="mt-1 block w-full border-gray-300 rounded-lg shadow-sm focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm" required>
+            </div>
+            <div>
+                <label for="message" class="block text-sm font-medium text-gray-700">Your Message</label>
+                <textarea id="message" name="message" rows="4" class="mt-1 block w-full border-gray-300 rounded-lg shadow-sm focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm" required></textarea>
+            </div>
+            <button type="submit" class="w-full bg-indigo-600 text-white py-2 px-4 rounded-lg hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500">Submit</button>
+        </form>
+    </div>
+
+    <!-- Helpful Links -->
+    <div>
+        <h2 class="text-xl font-semibold text-gray-800 mb-4">Helpful Links</h2>
+        <ul class="list-disc pl-6 space-y-2">
+            <li><a href="/view-result" class="text-indigo-600 hover:underline">View Result</a></li>
+            <li><a href="/admin/add-result" class="text-indigo-600 hover:underline">Add Result</a></li>
+            <li><a href="/privacy-policy" class="text-indigo-600 hover:underline">Privacy Policy</a></li>
+            <li><a href="/terms-of-service" class="text-indigo-600 hover:underline">Terms of Service</a></li>
+        </ul>
+    </div>
+</div>
+
+</body>
+</html>
